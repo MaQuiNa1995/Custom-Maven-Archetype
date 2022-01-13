@@ -13,39 +13,30 @@ Si hiciste un install y modificaste el arquetipo y este tiene la misma versión 
 `mvn install -U`
 
 # Usando el arquetipo
-
-## Windows
 ```
 mvn archetype:generate ^
   -DarchetypeGroupId=com.github.maquina1995 ^
   -DarchetypeArtifactId=archetype ^
-  -DarchetypeVersion=0.0.1-SNAPSHOT ^
-  -DgroupId=GroupIdDeTuproyecto ^
-  -DartifactId=ArtifactIdDeTuProyecto ^
-  -DartifactId=VersionQueQuieras
+  -DarchetypeVersion=1.0.0-RELEASE ^
+  -DgroupId=com.github.maquina1995 ^
+  -DartifactId=prueba ^
+  -Dversion=1.0.0-BETA
 ```
 
-## Linux
-```
-mvn archetype:generate \
-  -DarchetypeGroupId=com.github.maquina1995 \
-  -DarchetypeArtifactId=archetype \
-  -DarchetypeVersion=0.0.1-SNAPSHOT \
-  -DgroupId=GroupIdDeTuproyecto \
-  -DartifactId=ArtifactIdDeTuProyecto \
-  -DartifactId=VersionQueQuieras
-```
-
-## Ejecutando el comando 
-```
-mvn archetype:generate                          ^
-  -DarchetypeGroupId=com.github.maquina1995     ^
-  -DarchetypeArtifactId=archetype          		^
-  -DarchetypeVersion=0.0.1-SNAPSHOT        		^
-  -DgroupId=com.github.maquina1995              ^
-  -DartifactId=prueba
-```
+Si usas Linux cambia los `^` por `\`
 
 Despues de ver que todos los paquetes están bien en las trazas de consola que te han salido despues de ejecutar daremos enter y ya tendremos el proyecto creado 
 
-references: https://maven.apache.org/guides/mini/guide-creating-archetypes.html
+## Ejecutar Test
+```
+cd prueba
+mvn test
+```
+
+## Ejecutar Aplicación
+```
+cd prueba
+mvn spring-boot:run
+```
+
+referencias: https://maven.apache.org/guides/mini/guide-creating-archetypes.html

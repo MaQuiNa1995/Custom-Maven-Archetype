@@ -22,7 +22,7 @@
 
 	<properties>
 		<jacoco.plugin.version>0.8.7</jacoco.plugin.version>
-		<lombok.mapstruct.binding.version>[0,1)</lombok.mapstruct.binding.version>
+		<lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
 	</properties>
 
@@ -50,7 +50,7 @@
 			<artifactId>mapstruct</artifactId>
 			<version>${mapstruct.version}</version>
 		</dependency>
-		
+
 		<!-- Testing -->
 		<!-- Spring-Boot -->
 		<dependency>
@@ -88,6 +88,25 @@
 				</executions>
 			</plugin>
 			<!-- Maven Plugins -->
+			<!-- Spring-boot -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- Jar Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>${groupId}.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 			<!-- Source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
